@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/0f97643179.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Anton|Carrois+Gothic+SC|Montserrat:900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Anton|Carrois+Gothic+SC|Montserrat:900|Roboto|Oswald" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/styles.css">
     </head>
 
@@ -17,26 +17,94 @@
         <div class="container">
             <!-- Title-->
             <div class="row titleText ">
-                <div class=" col text-center pt-3"> <i class="fa fa-train mr-2"></i>TRAIN SCHEDULER </div>
+                <div class="col-2"></div>
+                <div class=" col-7 text-center py-3"> <i class="fa fa-train mr-2"></i>TRAIN SCHEDULER </div>
+                <div class="col-2"></div>
+                <!--<hr>-->
             </div>
 
-            <!-- Main Schedule area -->
+                      <!-- Main Schedule area -->
             <div class = "row">
-                <div class = "col pt-4 text-center">
-                    --------------- Schedule goes here! ---------------
 
+                <div class="col-2"></div>
+                <div class = "col-8 py-4 text-center scheduleContainer ">
+                   <!----------------------- table beginning -------------------->
+                    <div class="tableTextTitle" > <div class="text-left ml-2">TRAIN SCHEDULE</div> </div>
+                    <table class = "table table-striped">
+                        <thead>
+                            <tr class="tableText" >
+                                <th scope="col " >Train Name</th>
+                                <th scope="col">Destination </th>
+                                <th scope="col">Frequency (min)</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
+                            </tr>
+
+                        </thead> <!-- end of table-head -->
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">LAXtoVegas</th> <!--Train name -->
+                                    <td >Los Angeles</td> <!-- destination -->
+                                    <td >90</td> <!-- frequency -->
+                                    <td >3:00 pm</td> <!-- next arrival -->
+                                    <td >10</td> <!-- minutes away -->
+                            </tr>
+                            <tr>
+                                <th scope="row">LAXtoSF</th> <!--Train name -->
+                                <td>Los Angeles</td> <!-- destination -->
+                                <td>45</td> <!-- frequency -->
+                                <td>1:45 pm</td> <!-- next arrival -->
+                                <td>25</td> <!-- minutes away -->
+                            </tr>
+                            <tr>
+                                <th scope="row">Fresno</th> <!--Train name -->
+                                <td>San Fransisco</td> <!-- destination -->
+                                <td>120</td> <!-- frequency -->
+                                <td>4:45</td> <!-- next arrival -->
+                                <td>25</td> <!-- minutes away -->
+                            </tr>
+
+                        </tbody> <!-- End of t-body -->
+
+                    </table>
+                    <!----------------------- table end -------------------->
 
                 </div>
-
-            </div>
+                <div class="col-2"></div>
+          </div>
 
             <!-- Enter Train information -->
             <div class = "row">
-                <div class = "col pt-4 text-center">
-                   ---------------  Enter the train information here! --------------
+                <div class="col-2"></div>
+                <div class = "col-8 pt-4 text-center scheduleContainer  tableText">
+                    <div class="tableTextTitle" > <div class="text-left ml-2">ADD TRAIN</div> </div>
+
+                    <form class="text-left pt-3">
+                        <div class="form-group">
+                            <label for="TrainName">Train Name</label>
+                            <input type="text" class="form-control" id="TrainName" placeholder="Enter train name">
+                        </div>
+                        <div class="form-group ">
+                            <label for="Destination">Destination</label>
+                            <input type="text" class="form-control" id="Destination" placeholder="Enter destination">
+                        </div>
+
+                        <div class="form-group ">
+                            <label for="TrainTime">Train Time (HH:mm - military time)</label>
+                            <input type="text" class="form-control" id="TrainTime" placeholder="Enter train time">
+                        </div>
+
+                        <div class="form-group ">
+                            <label for="Frequncy">Frequency (min)</label>
+                            <input type="text" class="form-control" id="Frequncy" placeholder="Enter frequency">
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+
 
                 </div>
-
+                <div class="col-2"></div>
             </div>
 
 
