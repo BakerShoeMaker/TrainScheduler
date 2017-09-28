@@ -1,0 +1,24 @@
+body{
+    background-image: url(../images/dev-benjamin-219170.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+
+}
+.titleText{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    /*text-shadow:  2px 2px #000000;*/
+    color: white;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+
+
+
+
+
