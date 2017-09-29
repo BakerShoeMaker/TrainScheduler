@@ -2,12 +2,20 @@
 <html >
     <!--HEAD-->
     <head>
+        <meta charset="UTF-8" lang="eng">
         <link rel="stylesheet" href="assets/css/reset.css">
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script
+                src="https://code.jquery.com/jquery-3.2.1.js"
+                integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+                crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/0f97643179.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Anton|Carrois+Gothic+SC|Montserrat:900|Roboto|Oswald" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/styles.css">
+        <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+
     </head>
 
     <!--BODY -->
@@ -42,7 +50,7 @@
 
                         </thead> <!-- end of table-head -->
 
-                        <tbody>
+                        <tbody id="TrainInformation">
                             <tr>
                                 <th scope="row">LAXtoVegas</th> <!--Train name -->
                                     <td >Los Angeles</td> <!-- destination -->
@@ -50,20 +58,7 @@
                                     <td >3:00 pm</td> <!-- next arrival -->
                                     <td >10</td> <!-- minutes away -->
                             </tr>
-                            <tr>
-                                <th scope="row">LAXtoSF</th> <!--Train name -->
-                                <td>Los Angeles</td> <!-- destination -->
-                                <td>45</td> <!-- frequency -->
-                                <td>1:45 pm</td> <!-- next arrival -->
-                                <td>25</td> <!-- minutes away -->
-                            </tr>
-                            <tr>
-                                <th scope="row">Fresno</th> <!--Train name -->
-                                <td>San Fransisco</td> <!-- destination -->
-                                <td>120</td> <!-- frequency -->
-                                <td>4:45</td> <!-- next arrival -->
-                                <td>25</td> <!-- minutes away -->
-                            </tr>
+
 
                         </tbody> <!-- End of t-body -->
 
@@ -113,6 +108,7 @@
      </div><!-- ************************* END
 
         <!--BOOTSTRAP and JS STUFF -->
+
         <script  src="assets/javascript/app.js"></script>
 
 
