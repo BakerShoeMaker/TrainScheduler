@@ -27,13 +27,16 @@ $(document).ready(function(){
         trainName = $("#TrainName").val().trim();
         trainDestination = $("#Destination").val().trim();
         trainFrequency = $("#Frequncy").val().trim();
+        trainTime = $("#TrainTime").val().trim();
 
+        //add momemtjs here and add the minutes away
 
         //send key/values to database.
         database.ref().push({
             db_train: trainName,
             db_destination: trainDestination,
-            db_frequency: trainFrequency
+            db_frequency: trainFrequency,
+            db_trainTime: trainTime
 
         });
 
@@ -51,10 +54,12 @@ $(document).ready(function(){
         var _trainName =$("<th scope = 'row'>").html(childSnapshot.val().db_train);
         var _destination = $("<td>").html(childSnapshot.val().db_destination);
         var _frequency = $("<td>").html(childSnapshot.val().db_frequency);
+        var _trainTime = $("<td>").html(childSnapshot.val().db_trainTime);
 
         newTrainRow.append(_trainName)
             .append(_destination)
-            .append(_frequency);
+            .append(_frequency)
+            .append(_trainTime);
 
         $("#TrainInformation").append(newTrainRow)
 
@@ -63,12 +68,3 @@ $(document).ready(function(){
 
 
 });
-
-
-
-
-
-
-
-
-
