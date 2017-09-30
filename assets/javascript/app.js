@@ -22,10 +22,12 @@ $(document).ready(function(){
     var trainMinutesAway = "";
 
     $("button").on("click", function(){
+        //event.preventDefault();
         //Assign variables to form values
         trainName = $("#TrainName").val().trim();
         trainDestination = $("#Destination").val().trim();
         trainFrequency = $("#Frequncy").val().trim();
+
 
         //send key/values to database.
         database.ref().push({
@@ -34,21 +36,27 @@ $(document).ready(function(){
             db_frequency: trainFrequency
 
         });
-        //Display values on the page.
-        database.ref().on("child_added", function(){
-            var _newRow = $("<tr>");
-            var _trainName = $("<th scope='row'>").html(childSnapshot.val().db_train);
-            var _destination = $("<td>").html(childSnapshot.val().db_destination);
-            var _freqency = $("<td>").html(childSnapshot.val().db_frequency);
-            //add next arrival
-            //add minutes away
 
-            _newRow.append(_trainName)
-                .append(_destination)
-                .append(_freqency);
 
-            $("#TrainInformation").append(_newRow);
-        });
+
+    });
+
+    //Display values on the page.
+    database.ref().on("child_added", function(childSnapshot){
+        console.log(childSnapshot.val().db_train);
+        console.log(childSnapshot.val().db_destination);
+        console.log(childSnapshot.val().db_frequency);
+        var newTrainRow = $("<tr>");
+
+        var _trainName =$("<th scope = 'row'>").html(childSnapshot.val().db_train);
+        var _destination = $("<td>").html(childSnapshot.val().db_destination);
+        var _frequency = $("<td>").html(childSnapshot.val().db_frequency);
+
+        newTrainRow.append(_trainName)
+            .append(_destination)
+            .append(_frequency);
+
+        $("#TrainInformation").append(newTrainRow)
 
 
     });
