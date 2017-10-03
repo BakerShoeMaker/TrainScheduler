@@ -30,6 +30,22 @@ $(document).ready(function(){
         trainTime = $("#TrainTime").val().trim();
 
         //add momemtjs here and add the minutes away
+        //-----------------------------------------------------------
+
+        var f = 60;
+        var time = "04:40";
+        var mTime = moment(time, "hh:mm").format('hh:mm');
+        console.log(mTime);
+
+        f = moment(f, "m mm").format(" mm");
+        console.log(f);
+
+        //nextTrain = moment(mTime).format("hh:mm").add(f);
+        console.log("The next train will be here at: " +mTime);
+
+        //-----------------------------------------------------------
+
+
 
         //send key/values to database.
         database.ref().push({
