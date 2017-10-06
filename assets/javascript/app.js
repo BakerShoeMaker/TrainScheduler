@@ -1,3 +1,12 @@
+function clearFormFields()
+{
+    //Clear the form fields
+    $("#TrainName").text("");
+    $("#Destination").text("");
+    $("#Frequency").text("");
+    $("#FirstTrainTime").text("");
+}
+
 $(document).ready(function(){
 
     // Initialize Firebase
@@ -52,7 +61,7 @@ $(document).ready(function(){
         var trainNextArrival = moment(trainNextArrival_raw).format("hh:mm");
 
         //-----------------------------------------------------------
-        clearFormFields();
+
 
         //send key/values to database.
         database.ref().push({
@@ -62,8 +71,7 @@ $(document).ready(function(){
             db_trainMinutesAway: minutesTillTrain,
             db_trainNextArrival: trainNextArrival
         });
-
-
+        clearFormFields();
 
     });
 
@@ -91,11 +99,3 @@ $(document).ready(function(){
 
 });
 
-function clearFormFields()
-{
-    //Clear the form fields
-    $("#TrainName").text("");
-    $("#Destination").text("");
-    $("#Frequency").text("");
-    $("#FirstTrainTime").text("");
-}
